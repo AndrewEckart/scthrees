@@ -1,5 +1,6 @@
 {
   "projects": {
-    "prod": "sc-threes"
+    "prod": "sc-threes",
+    "default": "sc-threes"
   }
 }

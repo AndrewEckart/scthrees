@@ -11,8 +11,8 @@ import {NBA_RECORD_3PM} from '../constants';
   ]
 })
 export class MeterContainerComponent implements OnInit {
-  private _record: number = NBA_RECORD_3PM;
-  private _current = 0;
+  public _record: number = NBA_RECORD_3PM;
+  public _current = 0;
 
   @Input() set current(c: number) {
     this._current = c;
