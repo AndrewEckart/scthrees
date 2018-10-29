@@ -1,0 +1,25 @@
+[debug] [2018-10-29T04:07:10.525Z] ----------------------------------------------------------------------
+[debug] [2018-10-29T04:07:10.527Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andrew\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2018-10-29T04:07:10.527Z] CLI Version:   6.0.0
+[debug] [2018-10-29T04:07:10.527Z] Platform:      win32
+[debug] [2018-10-29T04:07:10.527Z] Node Version:  v8.11.3
+[debug] [2018-10-29T04:07:10.528Z] Time:          Mon Oct 29 2018 00:07:10 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-10-29T04:07:10.528Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-29T04:07:10.536Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-29T04:07:10.537Z] > authorizing via signed-in user
+[debug] [2018-10-29T04:07:10.537Z] [iam] checking project sc-threes for permissions ["firebase.projects.get"]
+[debug] [2018-10-29T04:07:10.539Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sc-threes:testIamPermissions  
+
+[debug] [2018-10-29T04:07:10.967Z] <<< HTTP RESPONSE 200
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-10-29T04:07:11.660Z] Fetching environment
+[debug] [2018-10-29T04:07:11.663Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/sc-threes  
+ 
+[debug] [2018-10-29T04:07:11.912Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-29T04:07:11.914Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/291212355888:getServerAppConfig  
+ 
+[debug] [2018-10-29T04:07:12.156Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-29T04:07:12.156Z] Starting @google-cloud/functions-emulator
+[debug] [2018-10-29T04:07:13.713Z] Parsing function triggers
+[info] +  functions: getData

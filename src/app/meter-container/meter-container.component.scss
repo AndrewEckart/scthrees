@@ -1,0 +1,23 @@
+app-meter {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 19px;
+  max-height: 450px;
+
+  vertical-align: bottom;
+  background: #008eed; /* Old browsers */
+  background: -moz-linear-gradient(top, #008eed 0%, #005a96 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #008eed 0%, #005a96 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #008eed 0%, #005a96 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008eed', endColorstr='#005a96', GradientType=0); /* IE6-9 */
+}
+
+#current {
+  background: #fccb44; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fccb44 0%, #f2ae26 50%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fccb44 0%,#f2ae26 50%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fccb44 0%,#f2ae26 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fccb44', endColorstr='#f2ae26',GradientType=0 ); /* IE6-9 */
+}

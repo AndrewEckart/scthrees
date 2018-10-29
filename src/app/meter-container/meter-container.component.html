@@ -1,0 +1,7 @@
+<app-meter id="record" [label]="'NBA REGULAR SEASON RECORD'" [value]="_record"
+           [@meterHeight]="recordAnim">
+</app-meter>
+<app-meter id="current" [label]="'2018-2019 MADE 3s'" [value]="_current"
+           [@meterHeight]="currentAnim"
+           (click)="currentAnim.params.height = '60%'">
+</app-meter>

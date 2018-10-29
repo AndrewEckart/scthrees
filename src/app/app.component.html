@@ -1,0 +1,12 @@
+<div id="content-container" fxLayout="column" fxLayoutAlign="center stretch"
+     *ngIf="data$ | async as data">
+  <div id="c" fxLayout="column">
+    <div id="c-sub" fxLayout="row" fxLayoutAlign="center center">
+      <img id="sc-img" [src]="data.tpm > record ? 'assets/sc3s4.png' : 'assets/sc3s2.png'" alt="">
+      <app-meter-container fxFlexAlign="stretch" [current]="data?.tpm">
+      </app-meter-container>
+      <app-stats style="margin-left: 1.5em" [data]="data"></app-stats>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>

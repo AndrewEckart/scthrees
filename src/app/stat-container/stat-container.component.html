@@ -1,0 +1,10 @@
+<div
+  [ngClass.xs]="{'xs': true}"
+  [ngClass.sm]="{'sm': true}"
+  [class.dark]="darkMode"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  fxLayoutGap="0.2em">
+  <span [style.color]="darkMode ? '#aaa' : '#333'">{{value | number:numFormat}}</span>
+  <span [style.color]="darkMode ? '#fbdc05' : '#aaa'">{{label}}</span>
+</div>

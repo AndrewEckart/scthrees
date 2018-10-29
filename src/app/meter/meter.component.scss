@@ -1,0 +1,32 @@
+.indicator {
+  min-width: 200px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  padding: 4px 120% 4px 8px;
+  width: auto;
+  height: auto;
+  color: #fff;
+  text-align: right;
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  border-bottom-left-radius: 6px;
+}
+
+
+.label {
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  font-size: .5em;
+  font-variant: small-caps;
+  letter-spacing: .1em;
+  vertical-align: bottom;
+}
+
+.value {
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: bottom;
+}
