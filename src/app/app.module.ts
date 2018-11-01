@@ -16,7 +16,8 @@ import {LetDirective} from './directives/let.directive';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {HttpClientModule} from '@angular/common/http';
 import {AngularFireFunctionsModule, FunctionsRegionToken} from '@angular/fire/functions';
-import { StatusIndicatorComponent } from './status-indicator/status-indicator.component';
+import {StatusIndicatorComponent} from './status-indicator/status-indicator.component';
+import {TweetComponent} from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StatusIndicatorComponent } from './status-indicator/status-indicator.co
     MeterComponent,
     MeterContainerComponent,
     LetDirective,
-    StatusIndicatorComponent
+    StatusIndicatorComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { StatusIndicatorComponent } from './status-indicator/status-indicator.co
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
   ],
   providers: [
     { provide: FunctionsRegionToken, useValue: 'us-central1' }
