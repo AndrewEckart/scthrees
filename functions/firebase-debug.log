@@ -1,0 +1,20 @@
+[debug] [2018-11-01T20:51:14.465Z] ----------------------------------------------------------------------
+[debug] [2018-11-01T20:51:14.467Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andrew\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2018-11-01T20:51:14.467Z] CLI Version:   6.0.0
+[debug] [2018-11-01T20:51:14.468Z] Platform:      win32
+[debug] [2018-11-01T20:51:14.468Z] Node Version:  v8.11.3
+[debug] [2018-11-01T20:51:14.468Z] Time:          Thu Nov 01 2018 16:51:14 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-11-01T20:51:14.468Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-01T20:51:14.478Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-01T20:51:14.479Z] > authorizing via signed-in user
+[debug] [2018-11-01T20:51:14.479Z] [iam] checking project sc-threes for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2018-11-01T20:51:14.481Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sc-threes:testIamPermissions  
+
+[debug] [2018-11-01T20:51:14.807Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'sc-threes'...
+[info] 
+[info] i  deploying functions
+[info] Running command: npm --prefix "%RESOURCE_DIR%" run lint
+[info] Running command: npm --prefix "%RESOURCE_DIR%" run build

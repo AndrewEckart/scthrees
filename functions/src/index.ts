@@ -29,7 +29,7 @@ export const getData = functions.https.onCall((data: any, context: CallableConte
       const statsTables = $('#Col1-1-GraphStats-Proxy tbody');
       const gamesTable = statsTables.first();
       const score = $('td:nth-of-type(3) a', gamesTable).html();
-      const live = !score.includes('W') && !score.includes('L') && gameCount <= 82;
+      const live = !score.includes('W') && !score.includes('L') && gameCount < 82;
 
       const totalsTable = statsTables.last();
       let tpm = parseInt($('tr:last-of-type td:nth-of-type(8)', totalsTable).text());
