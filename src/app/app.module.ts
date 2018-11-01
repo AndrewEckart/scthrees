@@ -14,6 +14,9 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {LetDirective} from './directives/let.directive';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {HttpClientModule} from '@angular/common/http';
+import {AngularFireFunctionsModule, FunctionsRegionToken} from '@angular/fire/functions';
+import { StatusIndicatorComponent } from './status-indicator/status-indicator.component';
 
 @NgModule({
   declarations: [
@@ -23,17 +26,22 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     StatContainerComponent,
     MeterComponent,
     MeterContainerComponent,
-    LetDirective
+    LetDirective,
+    StatusIndicatorComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireFunctionsModule
   ],
-  providers: [],
+  providers: [
+    { provide: FunctionsRegionToken, useValue: 'us-central1' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

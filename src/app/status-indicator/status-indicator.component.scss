@@ -1,0 +1,58 @@
+#not-live {
+  background-color: #e00000;
+}
+
+#live {
+  background-color: #27b314;
+}
+
+#live, #not-live {
+  font-size: 9px;
+  letter-spacing: .3em;
+  padding: 3px 2px;
+  color: #fff;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+#spinner {
+  display: inline-block;
+  margin-right: 5px;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+
+/** Animations **/
+.animate-flicker {
+  -webkit-animation: flickerAnimation 1.4s infinite;
+  -moz-animation: flickerAnimation 1.4s infinite;
+  -o-animation: flickerAnimation 1.4s infinite;
+  animation: flickerAnimation 1.4s infinite;
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes flickerAnimation {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes flickerAnimation {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes flickerAnimation {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}

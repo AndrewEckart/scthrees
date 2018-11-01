@@ -1,0 +1,7 @@
+<div id="live" *ngIf="live">
+  <div id="spinner" class="animate-flicker"></div>
+  <span>LIVE</span>
+</div>
+<div id="not-live" *ngIf="!live">
+  <span>NEXT: {{nextGame | date:'M/d'}}</span>
+</div>
