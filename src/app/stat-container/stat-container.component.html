@@ -5,6 +5,6 @@
   fxLayout="row"
   fxLayoutAlign="space-between center"
   fxLayoutGap="0.2em">
-  <span [style.color]="darkMode ? '#aaa' : '#333'">{{value | number:numFormat}}</span>
-  <span [style.color]="darkMode ? '#fbdc05' : '#aaa'">{{label}}</span>
+  <span [style.color]="darkMode ? '#fbdc05' : '#333'">{{value | number:numFormat}}</span>
+  <span style="color: #aaa">{{label}}</span>
 </div>

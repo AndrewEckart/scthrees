@@ -5,7 +5,7 @@
       <img id="sc-img" [src]="data.tpm > record ? 'assets/sc3s4.png' : 'assets/sc3s2.png'" alt="">
       <app-meter-container fxFlexAlign="stretch" [current]="data?.tpm">
       </app-meter-container>
-      <app-stats style="margin-left: 1.5em" [data]="data"></app-stats>
+      <app-stats [data]="data"></app-stats>
     </div>
     <app-footer></app-footer>
   </div>

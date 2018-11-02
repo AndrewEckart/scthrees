@@ -1,4 +1,6 @@
-<div fxLayout="column">
+<div fxLayout="column"
+     style="padding: 0.4em"
+     [ngStyle.lt-md]="{'padding': '0.2em'}">
   <app-status-indicator [live]="data.live" [nextGame]="data.nextGame"></app-status-indicator>
   <app-stat-container id="threes" [value]="data.tpm" label="3PM"></app-stat-container>
   <app-stat-container id="games" [value]="data.gameCount" label="GAMES"></app-stat-container>
