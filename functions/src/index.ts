@@ -18,40 +18,37 @@ export const getData = functions.https.onCall((data: any, context: CallableConte
     teamName: 'warriors'
   });
 
-  Promise.all([rp(options), schedule$])
-    .then(([$, s]) => {
+  const profile$ = nba.data.playerProfile({
+    year: '2018',
+    personId: '201939'
+  }).then((res) => res.league.standard.stats.latest);
+
+  Promise.all([rp(options), schedule$, profile$])
+    .then(([$, s, p]) => {
 
       const i = s.league.lastStandardGamePlayedIndex;
       const games = s.league.standard;
-
-      let gameCount = games.filter((g) => g.seasonStageId === 2)
-        .filter((g) => g.statusNum === 3).length;
+      let gameCount = games.filter((g) => g.seasonStageId === 2 && g.statusNum === 3).length;
+      const nextGame = gameCount < 82 && games.length > i + 1 ? games[i + 1] : null;
 
       const statsTables = $('#Col1-1-GraphStats-Proxy tbody');
       const gameRow = $('tr:first-of-type', statsTables.first()).first();
       const score = $('td:nth-of-type(3) a', gameRow).html();
-      const live = !score.includes('W') && !score.includes('L') && gameCount < 82;
+      const live = nextGame && !score.includes('W') && !score.includes('L')
+        && new Date(nextGame.startTimeUTC).getTime() < Date.now();
 
-      const totalsTable = statsTables.last();
-      let tpm = parseInt($('tr:last-of-type td:nth-of-type(8)', totalsTable).text());
-      let tpa = parseInt($('tr:last-of-type td:nth-of-type(9)', totalsTable).text());
+      let tpm = parseInt(p.tpm);
+      let tpa = parseInt(p.tpa);
 
       if (live) {
+        tpm += parseInt($('td:nth-of-type(9) span', gameRow).html());
+        tpa += parseInt($('td:nth-of-type(10) span', gameRow).html());
         gameCount += 1;
-        const tpmDelta = parseInt($('td:nth-of-type(9) span', gameRow).html());
-        const tpaDelta = parseInt($('td:nth-of-type(10) span', gameRow).html());
-        tpm += tpmDelta;
-        tpa += tpaDelta;
       }
 
-      // const liveGames = games.filter((g) => g.statusNum === 2);
-      // const live = !!liveGames.length && liveGames[0].seasonStageId === 2;
+      const next = nextGame ? nextGame.startTimeUTC : null;
 
-      const nextGame = gameCount >= 82
-        ? 'SEASON COMPLETE'
-        : games[i + 1].startTimeUTC;
-
-      return database.ref('/').update({tpa, tpm, live, gameCount, nextGame});
+      return database.ref('/').update({tpa, tpm, live, gameCount, next});
     })
     .catch(console.error);
 });
