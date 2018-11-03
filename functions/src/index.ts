@@ -20,6 +20,7 @@ export const getData = functions.https.onCall((data: any, context: CallableConte
 
   Promise.all([rp(options), schedule$])
     .then(([$, s]) => {
+
       const i = s.league.lastStandardGamePlayedIndex;
       const games = s.league.standard;
 
@@ -27,8 +28,8 @@ export const getData = functions.https.onCall((data: any, context: CallableConte
         .filter((g) => g.statusNum === 3).length;
 
       const statsTables = $('#Col1-1-GraphStats-Proxy tbody');
-      const gamesTable = statsTables.first();
-      const score = $('td:nth-of-type(3) a', gamesTable).html();
+      const gameRow = $('tr:first-of-type', statsTables.first()).first();
+      const score = $('td:nth-of-type(3) a', gameRow).html();
       const live = !score.includes('W') && !score.includes('L') && gameCount < 82;
 
       const totalsTable = statsTables.last();
@@ -37,8 +38,10 @@ export const getData = functions.https.onCall((data: any, context: CallableConte
 
       if (live) {
         gameCount += 1;
-        tpm += parseInt($('td:nth-of-type(9) span', gamesTable).html());
-        tpa += parseInt($('td:nth-of-type(10) span', gamesTable).html());
+        const tpmDelta = parseInt($('td:nth-of-type(9) span', gameRow).html());
+        const tpaDelta = parseInt($('td:nth-of-type(10) span', gameRow).html());
+        tpm += tpmDelta;
+        tpa += tpaDelta;
       }
 
       // const liveGames = games.filter((g) => g.statusNum === 2);
