@@ -1,0 +1,95 @@
+[debug] [2018-11-06T08:35:14.866Z] ----------------------------------------------------------------------
+[debug] [2018-11-06T08:35:14.871Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andrew\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2018-11-06T08:35:14.872Z] CLI Version:   6.0.1
+[debug] [2018-11-06T08:35:14.872Z] Platform:      win32
+[debug] [2018-11-06T08:35:14.872Z] Node Version:  v8.11.3
+[debug] [2018-11-06T08:35:14.873Z] Time:          Tue Nov 06 2018 03:35:14 GMT-0500 (Eastern Standard Time)
+[debug] [2018-11-06T08:35:14.874Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-06T08:35:14.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-06T08:35:14.909Z] > authorizing via signed-in user
+[debug] [2018-11-06T08:35:14.909Z] [iam] checking project sc-threes for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2018-11-06T08:35:14.913Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-06T08:35:14.913Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-06T08:35:15.167Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:15.180Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/sc-threes:testIamPermissions  
+
+[debug] [2018-11-06T08:35:15.580Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'sc-threes'...
+[info] 
+[info] i  deploying functions
+[info] Running command: npm --prefix "%RESOURCE_DIR%" run lint
+[info] Running command: npm --prefix "%RESOURCE_DIR%" run build
+[info] +  functions: Finished running predeploy script.
+[debug] [2018-11-06T08:35:36.054Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "./node_modules/.bin/tslint -p tslint.json && tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.5",
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0",
+    "nba.js": "^0.6.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "tslint": "~5.8.0",
+    "typescript": "~2.8.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-11-06T08:35:36.057Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/sc-threes?view=CONSUMER_VIEW  
+ 
+[debug] [2018-11-06T08:35:36.058Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/sc-threes?view=CONSUMER_VIEW  
+ 
+[debug] [2018-11-06T08:35:36.794Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:36.887Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-11-06T08:35:36.895Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/sc-threes  
+ 
+[debug] [2018-11-06T08:35:37.168Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:37.169Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/291212355888:getServerAppConfig  
+ 
+[debug] [2018-11-06T08:35:37.453Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-11-06T08:35:37.463Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/sc-threes/configs  
+ 
+[debug] [2018-11-06T08:35:37.819Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (54.68 KB) for uploading
+[debug] [2018-11-06T08:35:39.538Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/sc-threes/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2018-11-06T08:35:40.333Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:40.335Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-69cf6bb5-ce5d-4868-9f47-3849aa7489b0/3e250618-ed6a-49a4-bc34-de6db3ccee84.zip?GoogleAccessId=service-291212355888@gcf-admin-robot.iam.gserviceaccount.com&Expires=1541495142&Signature=DdAyyYqhR5zm3KA%2BSGe0XeRSOgFts%2Bzax4NbNhNyOMorXkFC2XD4hGMDNRx%2Bsy9SI%2Fg5GrpiCIFV6Nz0dyII%2FAcI4OuGz9yusRv%2BBuSNVFg9gIJ9v5l4epIHU2GlwyX5QovofGtIWYQgXihBrCHSgJbk0IreCMQx1KUgIklD5lieWhSBREBbw%2BUA7LcV8YjsQZlRjrTlDJS%2BQH%2FgGb6Ty3JYckSr4maAGGc372n6Q1%2B3S1dW5q%2FJq3FJ28WhIywa4rABRc1We8NQayRHX9QfnguVwF%2B0euYcAMi%2BCOGJMHQxI8slvoWtYrIRPb4La0bSnoWmRJhDzfVjHrc4ip5BUA%3D%3D  
+
+[debug] [2018-11-06T08:35:41.190Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[debug] [2018-11-06T08:35:41.197Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/sc-threes/locations/-/functions  
+ 
+[debug] [2018-11-06T08:35:42.021Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 6 function getData(us-central1)...
+[debug] [2018-11-06T08:35:42.032Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-11-06T08:35:42.034Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/sc-threes/locations/us-central1/functions/getData {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+
+[debug] [2018-11-06T08:35:42.745Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:42.748Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/sc-threes/locations/-/functions  
+ 
+[debug] [2018-11-06T08:35:43.568Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:43.570Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c2MtdGhyZWVzL3VzLWNlbnRyYWwxL2dldERhdGEvWmlKRXg1NXZGcG8  
+ 
+[debug] [2018-11-06T08:35:44.004Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T08:35:46.005Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c2MtdGhyZWVzL3VzLWNlbnRyYWwxL2dldERhdGEvWmlKRXg1NXZGcG8  
+ 
+[debug] [2018-11-06T08:35:46.480Z] <<< HTTP RESPONSE 200
