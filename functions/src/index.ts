@@ -55,7 +55,7 @@ export const getData = functions.https.onRequest((req, res) => {
             live,
             gameCount: Math.max(gameCount, current.gameCount, 82),
             next,
-            tpa: Math.max(current,tpa, tpa),
+            tpa: Math.max(current.tpa, tpa),
             tpm: Math.max(current.tpm, tpm)
           };
         });
