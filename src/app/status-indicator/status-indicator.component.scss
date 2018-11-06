@@ -1,15 +1,15 @@
-#not-live {
+#upcoming {
   background-color: #e00000;
 }
 
-#live {
+#live, #complete {
   background-color: #27b314;
 }
 
-#live, #not-live {
+#live, #upcoming, #complete {
   font-size: 9px;
   letter-spacing: .3em;
-  padding: 3px 2px;
+  padding: 3px 10px;
   color: #fff;
   text-align: right;
   box-sizing: border-box;

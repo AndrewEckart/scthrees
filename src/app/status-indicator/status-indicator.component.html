@@ -2,6 +2,9 @@
   <div id="spinner" class="animate-flicker"></div>
   <span>LIVE</span>
 </div>
-<div id="not-live" *ngIf="!live">
-  <span>NEXT: {{nextGame | date:'M/d'}}</span>
+<div id="upcoming" *ngIf="!live && nextGame">
+  <span *ngIf="nextGame">NEXT: {{nextGame | date:'M/d'}}</span>
+</div>
+<div id="complete" *ngIf="!live && !nextGame">
+  <span>SEASON COMPLETE</span>
 </div>

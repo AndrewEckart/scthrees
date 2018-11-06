@@ -25,8 +25,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.data$ = this.db.object('/').valueChanges() as Observable<AppData>;
-    this.fetchData();
-    setInterval(this.fetchData.bind(this), 30000);
+    // this.fetchData();
+    // setInterval(this.fetchData.bind(this), 30000);
   }
 
   fetchData() {

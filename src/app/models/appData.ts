@@ -3,5 +3,5 @@ export class AppData {
   public tpa = 1;
   public gameCount = 1;
   public live = false;
-  public nextGame: string;
+  public next: string;
 }

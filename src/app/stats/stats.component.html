@@ -1,9 +1,9 @@
 <div fxLayout="column"
      style="padding: 0.4em"
      [ngStyle.lt-md]="{'padding': '0.2em'}">
-  <app-status-indicator [live]="data.live" [nextGame]="data.nextGame"></app-status-indicator>
+  <app-status-indicator [live]="data.live" [nextGame]="data.next"></app-status-indicator>
   <app-stat-container id="threes" [value]="data.tpm" label="3PM"></app-stat-container>
   <app-stat-container id="games" [value]="data.gameCount" label="GAMES"></app-stat-container>
   <app-stat-container id="pace" [value]="82 / data.gameCount * data.tpm" label="PACE" [darkMode]="true"></app-stat-container>
-  <app-stat-container id="pct" [value]="data.tpm / data?.tpa * 100" label="3PT%" [showDecimal]="true"></app-stat-container>
+  <app-stat-container id="pct" [value]="data.tpm / data?.tpa * 100" label="3P%" [showDecimal]="true"></app-stat-container>
 </div>
