@@ -53,7 +53,7 @@ export const getData = functions.https.onRequest((req, res) => {
         return database.ref('/').transaction((current) => {
           return {
             live,
-            gameCount: Math.max(gameCount, current.gameCount, 82),
+            gameCount: Math.max(gameCount, current.gameCount),
             next,
             tpa: Math.max(current.tpa, tpa),
             tpm: Math.max(current.tpm, tpm)
