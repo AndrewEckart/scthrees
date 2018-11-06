@@ -42,8 +42,8 @@ export const getData = functions.https.onRequest((req, res) => {
         let tpa = parseInt(p.tpa);
 
         if (live) {
-          tpm += parseInt($('td:nth-of-type(9) span', gameRow).html());
-          tpa += parseInt($('td:nth-of-type(10) span', gameRow).html());
+          tpm += parseInt($('td:nth-of-type(9) span', gameRow).html()) || 0;
+          tpa += parseInt($('td:nth-of-type(10) span', gameRow).html()) || 0;
           gameCount += 1;
         }
 
