@@ -49,7 +49,16 @@ export const getData = functions.https.onRequest((req, res) => {
 
         const next = nextGame ? nextGame.startTimeUTC : null;
 
-        return database.ref('/').update({tpa, tpm, live, gameCount, next});
+        // return database.ref('/').update({tpa, tpm, live, gameCount, next});
+        return database.ref('/').transaction((current) => {
+          return {
+            live,
+            gameCount: Math.max(gameCount, current.gameCount, 82),
+            next,
+            tpa: Math.max(current,tpa, tpa),
+            tpm: Math.max(current.tpm, tpm)
+          };
+        });
       })
       .then(() => {
         res.status(200).send();
